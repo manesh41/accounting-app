@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory Management</title>
+    <title>Enhanced Inventory Management</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>Product Inventory</h2>
+        <h2>Inventory Management System</h2>
+
+        <!-- Product Add Form -->
         <form id="add-product-form">
             <label for="product-name">Product Name:</label>
             <input type="text" id="product-name" name="product-name" required><br>
@@ -22,9 +24,38 @@
             <button type="submit">Add Product</button>
         </form>
 
-        <div id="inventory-list">
-            <!-- Display inventory here -->
-        </div>
+        <!-- Stock Adjust Form -->
+        <h3>Adjust Stock</h3>
+        <form id="adjust-stock-form">
+            <label for="adjust-product-name">Product Name:</label>
+            <select id="adjust-product-name" required></select><br>
+
+            <label for="adjust-quantity">Adjust Quantity:</label>
+            <input type="number" id="adjust-quantity" required><br>
+
+            <button type="submit">Adjust Stock</button>
+        </form>
+
+        <!-- Invoice Generation -->
+        <h3>Generate Invoice</h3>
+        <form id="generate-invoice-form">
+            <label for="invoice-product">Product Name:</label>
+            <select id="invoice-product" required></select><br>
+            
+            <label for="invoice-quantity">Quantity:</label>
+            <input type="number" id="invoice-quantity" required><br>
+            
+            <button type="submit">Generate Invoice</button>
+        </form>
+
+        <!-- Inventory List Display -->
+        <h3>Current Inventory</h3>
+        <div id="inventory-list"></div>
+
+        <!-- Report Section -->
+        <h3>Inventory Report</h3>
+        <button id="generate-report-btn">Generate Report</button>
+        <div id="inventory-report"></div>
     </div>
 
     <script src="script.js"></script>
